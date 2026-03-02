@@ -1,0 +1,119 @@
+/* DIY 手作台 */
+
+.page-container {
+  min-height: 100vh;
+  background-color: #F9F7F2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 60rpx;
+}
+
+/* 页头 */
+.page-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60rpx 0 32rpx;
+}
+
+.header-ornament {
+  font-size: 36rpx;
+  color: #D4AF37;
+  margin-bottom: 16rpx;
+  letter-spacing: 8rpx;
+}
+
+.header-title {
+  font-size: 52rpx;
+  font-weight: 500;
+  color: #8E7F73;
+  font-family: 'Songti SC', 'Noto Serif SC', 'STSong', serif;
+  letter-spacing: 10rpx;
+  margin-bottom: 12rpx;
+}
+
+.header-subtitle {
+  font-size: 24rpx;
+  color: #B5A496;
+  letter-spacing: 2rpx;
+}
+
+/* 参数栏 */
+.param-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: #F2EFE9;
+  border-radius: 100rpx;
+  padding: 18rpx 48rpx;
+  margin-bottom: 40rpx;
+  gap: 16rpx;
+}
+
+.param-text {
+  font-size: 26rpx;
+  color: #8E7F73;
+  font-family: 'Songti SC', serif;
+  letter-spacing: 1rpx;
+}
+
+.param-divider {
+  font-size: 26rpx;
+  color: #D4AF37;
+  opacity: 0.6;
+}
+
+/* Canvas 容器 */
+.canvas-wrap {
+  position: relative;
+  width: 680rpx;
+  height: 680rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bracelet-canvas {
+  width: 680rpx;
+  height: 680rpx;
+}
+
+.canvas-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loading-text {
+  font-size: 24rpx;
+  color: #B5A496;
+  font-family: 'Songti SC', serif;
+  letter-spacing: 2rpx;
+}
+
+/* 珠子说明 */
+.bead-note {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12rpx;
+  margin-top: 32rpx;
+  padding: 20rpx 40rpx;
+  background: #F2EFE9;
+  border-radius: 100rpx;
+}
+
+.bead-note-icon {
+  font-size: 22rpx;
+  color: #D4AF37;
+}
+
+.bead-note-text {
+  font-size: 22rpx;
+  color: #B5A496;
+  letter-spacing: 1rpx;
+}

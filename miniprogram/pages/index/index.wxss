@@ -1,0 +1,294 @@
+/* ========================================
+   首页样式 - 水晶能量手链
+   ======================================== */
+
+page {
+  background-color: #F9F7F2;
+}
+
+/* Hero 区域 */
+.hero-section {
+  padding: 80rpx 40rpx 40rpx;
+  text-align: center;
+  background: linear-gradient(180deg, #F2EFE9 0%, #F9F7F2 100%);
+}
+
+.brand-ornament {
+  font-size: 24rpx;
+  color: #D4AF37;
+  letter-spacing: 8rpx;
+  margin: 12rpx 0;
+}
+
+.brand-title {
+  font-size: 52rpx;
+  font-weight: 500;
+  color: #8E7F73;
+  font-family: 'Songti SC', 'Noto Serif SC', serif;
+  letter-spacing: 8rpx;
+  margin: 16rpx 0;
+}
+
+.brand-subtitle {
+  font-size: 26rpx;
+  color: #B5A496;
+  font-family: 'Songti SC', serif;
+  letter-spacing: 2rpx;
+  line-height: 1.8;
+}
+
+/* 每日能量签 */
+.daily-sign-card {
+  margin: 24rpx 32rpx;
+  background: linear-gradient(135deg, #F2EFE9 0%, #EDE8E1 100%);
+  border-radius: 28rpx;
+  padding: 40rpx;
+  border: 1rpx solid rgba(180, 164, 150, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.daily-sign-card::before {
+  content: '';
+  position: absolute;
+  top: -40rpx;
+  right: -40rpx;
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.sign-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24rpx;
+}
+
+.sign-label {
+  font-size: 22rpx;
+  color: #D4AF37;
+  letter-spacing: 4rpx;
+  font-family: 'Songti SC', serif;
+}
+
+.sign-date {
+  font-size: 22rpx;
+  color: #B5A496;
+}
+
+.sign-divider {
+  height: 1rpx;
+  background: linear-gradient(90deg, #D4AF37, transparent);
+  margin-bottom: 28rpx;
+  opacity: 0.5;
+}
+
+.sign-element {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.sign-element-icon {
+  font-size: 48rpx;
+  margin-right: 16rpx;
+}
+
+.sign-element-name {
+  font-size: 34rpx;
+  color: #8E7F73;
+  font-weight: 500;
+  font-family: 'Songti SC', serif;
+  letter-spacing: 2rpx;
+}
+
+.sign-content {
+  font-size: 28rpx;
+  color: #8E7F73;
+  line-height: 1.9;
+  font-family: 'Songti SC', serif;
+  margin-bottom: 24rpx;
+}
+
+.sign-crystal {
+  display: flex;
+  align-items: center;
+}
+
+.sign-crystal-label {
+  font-size: 22rpx;
+  color: #B5A496;
+}
+
+.sign-crystal-name {
+  font-size: 22rpx;
+  color: #D4AF37;
+  font-weight: 500;
+}
+
+.sign-refresh-hint {
+  position: absolute;
+  bottom: 20rpx;
+  right: 32rpx;
+  font-size: 20rpx;
+  color: #B5A496;
+  opacity: 0.6;
+}
+
+/* 功能区 section 标题 */
+.section-title {
+  font-size: 30rpx;
+  color: #B5A496;
+  font-family: 'Songti SC', serif;
+  letter-spacing: 4rpx;
+  text-align: center;
+  margin: 40rpx 0 24rpx;
+}
+
+/* 功能入口 网格 */
+.entry-grid {
+  display: flex;
+  margin: 0 32rpx;
+  gap: 20rpx;
+}
+
+.entry-card {
+  flex: 1;
+  border-radius: 24rpx;
+  padding: 40rpx 28rpx;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.entry-card--primary {
+  background: linear-gradient(145deg, #8E7F73 0%, #6B5E54 100%);
+}
+
+.entry-card--secondary {
+  background: #F2EFE9;
+  border: 1rpx solid rgba(180, 164, 150, 0.4);
+}
+
+.entry-icon {
+  font-size: 48rpx;
+  margin-bottom: 16rpx;
+  color: #D4AF37;
+}
+
+.entry-card--secondary .entry-icon {
+  color: #B5A496;
+}
+
+.entry-title {
+  font-size: 32rpx;
+  font-weight: 500;
+  font-family: 'Songti SC', serif;
+  letter-spacing: 2rpx;
+  margin-bottom: 12rpx;
+  color: #F9F7F2;
+}
+
+.entry-card--secondary .entry-title {
+  color: #8E7F73;
+}
+
+.entry-desc {
+  font-size: 22rpx;
+  line-height: 1.8;
+  color: rgba(249, 247, 242, 0.75);
+  white-space: pre-line;
+}
+
+.entry-card--secondary .entry-desc {
+  color: #B5A496;
+}
+
+.entry-tag {
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  background: #D4AF37;
+  color: #FFF8E1;
+  font-size: 18rpx;
+  padding: 4rpx 14rpx;
+  border-radius: 20rpx;
+  letter-spacing: 2rpx;
+}
+
+/* 全行入口卡片（脉轮） */
+.entry-card-full {
+  margin: 20rpx 32rpx 0;
+  background: #F2EFE9;
+  border: 1rpx solid rgba(180, 164, 150, 0.4);
+  border-radius: 24rpx;
+  padding: 32rpx 36rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.entry-full-left {
+  display: flex;
+  align-items: center;
+}
+
+.entry-full-icon {
+  font-size: 52rpx;
+  color: #6A5ACD;
+  margin-right: 24rpx;
+}
+
+.entry-full-title {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #8E7F73;
+  font-family: 'Songti SC', serif;
+  letter-spacing: 2rpx;
+  margin-bottom: 8rpx;
+}
+
+.entry-full-desc {
+  font-size: 22rpx;
+  color: #B5A496;
+  line-height: 1.6;
+}
+
+.entry-full-arrow {
+  font-size: 32rpx;
+  color: #B5A496;
+}
+
+/* 品牌理念 */
+.philosophy-section {
+  margin: 56rpx 40rpx 24rpx;
+  text-align: center;
+}
+
+.philosophy-ornament {
+  font-size: 28rpx;
+  color: #D4AF37;
+  opacity: 0.6;
+  margin: 16rpx 0;
+}
+
+.philosophy-text {
+  font-size: 26rpx;
+  color: #B5A496;
+  line-height: 2;
+  font-family: 'Songti SC', serif;
+  white-space: pre-line;
+  letter-spacing: 1rpx;
+}
+
+/* 免责声明 */
+.disclaimer {
+  font-size: 20rpx;
+  color: #B5A496;
+  text-align: center;
+  padding: 16rpx 40rpx 40rpx;
+  opacity: 0.6;
+}

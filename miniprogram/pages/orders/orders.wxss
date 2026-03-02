@@ -1,0 +1,2 @@
+page { background-color: #F9F7F2; }
+.page-container { min-height: 100vh; }

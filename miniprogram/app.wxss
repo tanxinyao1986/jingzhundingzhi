@@ -1,0 +1,118 @@
+/* ========================================
+   全局样式 - 水晶能量手链
+   遵循 UI/UX 视觉规范 v1.0
+   ======================================== */
+
+page {
+  --color-bg: #F9F7F2;
+  --color-card: #F2EFE9;
+  --color-primary: #8E7F73;
+  --color-secondary: #B5A496;
+  --color-accent-gold: #D4AF37;
+  --color-accent-purple: #6A5ACD;
+  --color-error: #CD5C5C;
+  --color-success: #556B2F;
+
+  background-color: #F9F7F2;
+  font-family: 'Songti SC', 'Noto Serif SC', 'STSong', serif;
+  color: #8E7F73;
+  font-size: 15px;
+  position: relative;
+}
+
+
+button {
+  background: initial;
+}
+
+button:focus {
+  outline: 0;
+}
+
+button::after {
+  border: none;
+}
+
+/* 通用容器 */
+.page-container {
+  min-height: 100vh;
+  background-color: #F9F7F2;
+  padding-bottom: 120rpx;
+}
+
+/* 通用卡片 */
+.card {
+  background: #F2EFE9;
+  border-radius: 24rpx;
+  padding: 36rpx;
+  margin: 24rpx 32rpx;
+}
+
+/* 大标题 */
+.title-lg {
+  font-size: 48rpx;
+  font-weight: 500;
+  color: #8E7F73;
+  font-family: 'Songti SC', 'Noto Serif SC', 'STSong', serif;
+  letter-spacing: 4rpx;
+}
+
+/* 正文 */
+.text-body {
+  font-size: 30rpx;
+  color: #8E7F73;
+  line-height: 1.8;
+}
+
+/* 说明文 */
+.text-caption {
+  font-size: 24rpx;
+  color: #B5A496;
+  line-height: 1.6;
+}
+
+/* 金色按钮 */
+.btn-gold {
+  background: linear-gradient(135deg, #D4AF37 0%, #F0D060 50%, #D4AF37 100%);
+  color: #FFF8E1;
+  border-radius: 100rpx;
+  padding: 28rpx 60rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  font-family: 'Songti SC', 'Noto Serif SC', serif;
+  letter-spacing: 4rpx;
+  border: none;
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+/* 幽灵按钮 */
+.btn-ghost {
+  background: transparent;
+  color: #8E7F73;
+  border: 2rpx solid #B5A496;
+  border-radius: 100rpx;
+  padding: 24rpx 48rpx;
+  font-size: 28rpx;
+  font-family: 'Songti SC', 'Noto Serif SC', serif;
+  letter-spacing: 2rpx;
+  text-align: center;
+}
+
+/* 分割线 */
+.divider {
+  height: 1rpx;
+  background: linear-gradient(90deg, transparent, #B5A496, transparent);
+  margin: 24rpx 0;
+  opacity: 0.4;
+}
+
+/* 免责声明 */
+.disclaimer {
+  font-size: 20rpx;
+  color: #B5A496;
+  text-align: center;
+  padding: 20rpx 40rpx;
+  opacity: 0.7;
+}

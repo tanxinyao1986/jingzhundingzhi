@@ -1,0 +1,32 @@
+<!-- DIY 手作台 -->
+<view class="page-container">
+
+  <!-- 页面标题 -->
+  <view class="page-header">
+    <view class="header-ornament">✦</view>
+    <view class="header-title">手作台</view>
+    <view class="header-subtitle">以手围自动排列珠子成链</view>
+  </view>
+
+  <!-- 手链参数 -->
+  <view class="param-bar">
+    <text class="param-text">手围 {{wristCm}} cm</text>
+    <text class="param-divider">·</text>
+    <text class="param-text">默认珠径 {{beadDiameterMm}} mm</text>
+  </view>
+
+  <!-- 手链 Canvas -->
+  <view class="canvas-wrap">
+    <canvas type="2d" id="braceletCanvas" class="bracelet-canvas"></canvas>
+    <view wx:if="{{isLoading}}" class="canvas-loading">
+      <text class="loading-text">排列珠子中…</text>
+    </view>
+  </view>
+
+  <!-- 当前测试说明 -->
+  <view class="bead-note">
+    <text class="bead-note-icon">◎</text>
+    <text class="bead-note-text">测试：红玉髓 × {{beadCount}}，验证圆周排列效果</text>
+  </view>
+
+</view>

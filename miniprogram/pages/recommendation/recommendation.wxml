@@ -1,0 +1,56 @@
+<!-- 推荐页 - 专属水晶推荐 -->
+<view class="page-container">
+
+  <view class="page-header">
+    <view class="header-ornament">✦</view>
+    <view class="header-title">专属推荐</view>
+    <view class="header-element" style="color: {{mainElementColor}}">
+      {{mainElementEmoji}} {{mainElement}}属性能量加持
+    </view>
+  </view>
+
+  <!-- 主推水晶 -->
+  <view class="section-label">✦ 调运灵宝（主石）</view>
+  <view class="crystal-list">
+    <view class="crystal-card" wx:for="{{mainCrystals}}" wx:key="id"
+          bindtap="onCrystalTap" data-id="{{item.id}}">
+      <image class="crystal-img" src="{{item.image_url}}" mode="aspectFill"></image>
+      <view class="crystal-info">
+        <view class="crystal-name">{{item.name}}</view>
+        <view class="crystal-element">{{item.elementCN}}属性 · {{item.chakra}}</view>
+        <view class="crystal-keywords">
+          <text class="keyword" wx:for="{{item.keywords}}" wx:key="*this">{{item}}</text>
+        </view>
+        <view class="crystal-price">¥ {{item.price}} / 颗</view>
+      </view>
+      <view class="crystal-add">+</view>
+    </view>
+  </view>
+
+  <!-- 辅助水晶 -->
+  <view class="section-label">◈ 辅运灵宝（副石）</view>
+  <view class="crystal-list">
+    <view class="crystal-card" wx:for="{{assistCrystals}}" wx:key="id"
+          bindtap="onCrystalTap" data-id="{{item.id}}">
+      <image class="crystal-img" src="{{item.image_url}}" mode="aspectFill"></image>
+      <view class="crystal-info">
+        <view class="crystal-name">{{item.name}}</view>
+        <view class="crystal-element">{{item.elementCN}}属性 · {{item.chakra}}</view>
+        <view class="crystal-keywords">
+          <text class="keyword" wx:for="{{item.keywords}}" wx:key="*this">{{item}}</text>
+        </view>
+        <view class="crystal-price">¥ {{item.price}} / 颗</view>
+      </view>
+      <view class="crystal-add">+</view>
+    </view>
+  </view>
+
+  <!-- 前往 DIY -->
+  <view class="diy-cta">
+    <view class="diy-cta-text">根据推荐，开始搭配你的手链</view>
+    <button class="btn-go-diy" bindtap="goToDiy">前往 DIY 手作台 →</button>
+  </view>
+
+  <view class="disclaimer">⚠️ 能量辅助，非医疗建议</view>
+
+</view>

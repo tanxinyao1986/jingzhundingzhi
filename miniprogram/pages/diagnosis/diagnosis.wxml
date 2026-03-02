@@ -1,0 +1,158 @@
+<!-- 诊断页 - 八字五行输入 -->
+<view class="page-container">
+
+  <!-- 页面标题 -->
+  <view class="page-header">
+    <view class="header-ornament">✦</view>
+    <view class="header-title">生辰定制</view>
+    <view class="header-subtitle">输入您的出生信息，解析命盘能量</view>
+  </view>
+
+  <!-- 输入区域 -->
+  <view class="form-card">
+
+    <!-- 历法切换 -->
+    <view class="calendar-toggle">
+      <view class="toggle-btn {{calendarType === 'solar' ? 'toggle-btn--active' : ''}}"
+            bindtap="switchCalendar" data-type="solar">阳历</view>
+      <view class="toggle-btn {{calendarType === 'lunar' ? 'toggle-btn--active' : ''}}"
+            bindtap="switchCalendar" data-type="lunar">阴历</view>
+    </view>
+
+    <!-- 年月日选择 -->
+    <view class="form-row">
+      <view class="form-label">出生年份</view>
+      <picker mode="selector" range="{{yearRange}}" value="{{yearIdx}}"
+              bindchange="onYearChange">
+        <view class="picker-value">{{birthYear}} 年</view>
+      </picker>
+    </view>
+
+    <view class="form-divider"></view>
+
+    <view class="form-row">
+      <view class="form-label">出生月份</view>
+      <picker mode="selector" range="{{monthRange}}" value="{{monthIdx}}"
+              bindchange="onMonthChange">
+        <view class="picker-value">{{birthMonth}} 月</view>
+      </picker>
+    </view>
+
+    <view class="form-divider"></view>
+
+    <view class="form-row">
+      <view class="form-label">出生日期</view>
+      <picker mode="selector" range="{{dayRange}}" value="{{dayIdx}}"
+              bindchange="onDayChange">
+        <view class="picker-value">{{birthDay}} 日</view>
+      </picker>
+    </view>
+
+    <view class="form-divider"></view>
+
+    <!-- 时辰选择 -->
+    <view class="form-row">
+      <view class="form-label">出生时辰</view>
+      <picker mode="selector" range="{{hourRange}}" value="{{hourIdx}}"
+              bindchange="onHourChange">
+        <view class="picker-value">{{hourRange[hourIdx]}}</view>
+      </picker>
+    </view>
+
+    <!-- 不知道时辰 -->
+    <view class="unknown-hour" bindtap="toggleUnknownHour">
+      <view class="checkbox {{unknownHour ? 'checkbox--checked' : ''}}">
+        <text wx:if="{{unknownHour}}">✓</text>
+      </view>
+      <text class="unknown-label">不知道出生时辰（使用正午作默认值）</text>
+    </view>
+
+  </view>
+
+  <!-- 输入提示 -->
+  <view class="form-tip">
+    <text class="tip-icon">◎</text>
+    <text class="tip-text">时辰越精准，推荐越贴合。如不确定，勾选"不知道出生时辰"即可。</text>
+  </view>
+
+  <!-- 计算按钮 -->
+  <view class="submit-area">
+    <button class="btn-calculate" bindtap="onCalculate" loading="{{isLoading}}">
+      {{isLoading ? '推算中...' : '✦ 开始推算命盘'}}
+    </button>
+  </view>
+
+  <!-- 结果区域 -->
+  <view wx:if="{{result}}" class="result-section">
+
+    <!-- 四柱八字 -->
+    <view class="result-card">
+      <view class="result-card-title">四柱八字</view>
+      <view class="bazi-grid">
+        <view class="pillar" wx:for="{{pillarsDisplay}}" wx:key="label">
+          <view class="pillar-label">{{item.label}}</view>
+          <view class="pillar-stem">{{item.stem}}</view>
+          <view class="pillar-branch">{{item.branch}}</view>
+        </view>
+      </view>
+      <view class="bazi-string">{{result.baZiString}}</view>
+    </view>
+
+    <!-- 五行分布 -->
+    <view class="result-card">
+      <view class="result-card-title">五行分布</view>
+      <view class="elements-bar">
+        <view class="element-item" wx:for="{{elementCounts}}" wx:key="name">
+          <view class="element-bar-wrap">
+            <view class="element-bar-fill"
+                  style="height: {{item.percent * 1.2}}rpx; background: {{item.color}};">
+            </view>
+          </view>
+          <view class="element-emoji">{{item.emoji}}</view>
+          <view class="element-name">{{item.name}}</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 诊断报告 -->
+    <view class="result-card result-card--highlight">
+      <view class="result-card-title">
+        <text class="title-icon">⊛</text> 能量诊断报告
+      </view>
+      <view class="report-divider"></view>
+
+      <!-- 推荐五行 -->
+      <view class="recommend-row">
+        <view class="recommend-item recommend-item--main">
+          <view class="recommend-label">调运灵宝</view>
+          <view class="recommend-element" style="color: {{mainElementMeta.color}}">
+            {{mainElementMeta.emoji}} {{result.mainElement}}属性
+          </view>
+          <view class="recommend-desc">泄耗忌神，调和能量</view>
+        </view>
+        <view class="recommend-divider">✦</view>
+        <view class="recommend-item recommend-item--assist">
+          <view class="recommend-label">辅运灵宝</view>
+          <view class="recommend-element" style="color: {{assistElementMeta.color}}">
+            {{assistElementMeta.emoji}} {{result.assistElement}}属性
+          </view>
+          <view class="recommend-desc">强化日主本命</view>
+        </view>
+      </view>
+
+      <view class="report-text">{{result.diagnosisReport}}</view>
+    </view>
+
+    <!-- 下一步按钮 -->
+    <view class="next-step-area">
+      <button class="btn-gold-next" bindtap="goToRecommendation">
+        查看专属水晶推荐 →
+      </button>
+    </view>
+
+    <!-- 免责声明 -->
+    <view class="disclaimer">⚠️ 能量辅助，非医疗建议</view>
+
+  </view>
+
+</view>

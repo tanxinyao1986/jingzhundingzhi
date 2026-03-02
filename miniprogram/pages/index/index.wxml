@@ -1,0 +1,75 @@
+<!-- 首页 - 水晶能量手链 -->
+<view class="page-container">
+
+  <!-- 顶部装饰 & 品牌 -->
+  <view class="hero-section">
+    <view class="brand-ornament">✦ · ✦</view>
+    <view class="brand-title">水晶能量手链</view>
+    <view class="brand-subtitle">以天地灵气，定制属于你的命运之链</view>
+    <view class="brand-ornament">· · ·</view>
+  </view>
+
+  <!-- 每日能量签 -->
+  <view class="daily-sign-card" bindtap="refreshDailySign">
+    <view class="sign-header">
+      <text class="sign-label">今日能量签</text>
+      <text class="sign-date">{{todayDate}}</text>
+    </view>
+    <view class="sign-divider"></view>
+    <view class="sign-element">
+      <text class="sign-element-icon">{{dailySign.elementEmoji}}</text>
+      <text class="sign-element-name">{{dailySign.element}}能量日</text>
+    </view>
+    <view class="sign-content">{{dailySign.content}}</view>
+    <view class="sign-crystal">
+      <text class="sign-crystal-label">今日护持水晶：</text>
+      <text class="sign-crystal-name">{{dailySign.crystal}}</text>
+    </view>
+    <view class="sign-refresh-hint">轻触刷新</view>
+  </view>
+
+  <!-- 功能入口 -->
+  <view class="section-title">开启你的定制之旅</view>
+
+  <view class="entry-grid">
+    <!-- 生辰定制 -->
+    <view class="entry-card entry-card--primary" bindtap="goToDiagnosis">
+      <view class="entry-icon">⊛</view>
+      <view class="entry-title">生辰定制</view>
+      <view class="entry-desc">以八字五行\n推荐专属水晶</view>
+      <view class="entry-tag">推荐</view>
+    </view>
+
+    <!-- 直接选购 -->
+    <view class="entry-card entry-card--secondary" bindtap="goToDiy">
+      <view class="entry-icon">◈</view>
+      <view class="entry-title">自由选购</view>
+      <view class="entry-desc">探索全系列水晶\n自由搭配手链</view>
+    </view>
+  </view>
+
+  <!-- 脉轮定制（整行） -->
+  <view class="entry-card-full" bindtap="goToChakra">
+    <view class="entry-full-left">
+      <view class="entry-full-icon">☯</view>
+      <view class="entry-full-text">
+        <view class="entry-full-title">脉轮定制</view>
+        <view class="entry-full-desc">七大脉轮能量平衡，探索内在宇宙</view>
+      </view>
+    </view>
+    <view class="entry-full-arrow">→</view>
+  </view>
+
+  <!-- 品牌理念 -->
+  <view class="philosophy-section">
+    <view class="philosophy-ornament">✦</view>
+    <view class="philosophy-text">
+      每一颗水晶，皆是大地亿万年的馈赠。\n我们相信，正确的石头在正确的时间，\n会遇见它命中注定的主人。
+    </view>
+    <view class="philosophy-ornament">✦</view>
+  </view>
+
+  <!-- 免责声明 -->
+  <view class="disclaimer">能量辅助，非医疗建议 · 天然矿石，颜色纹理各异</view>
+
+</view>

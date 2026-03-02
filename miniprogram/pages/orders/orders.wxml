@@ -1,0 +1,7 @@
+<view class="page-container">
+  <view style="text-align:center;padding:120rpx 40rpx;">
+    <view style="font-size:48rpx;color:#D4AF37;margin-bottom:24rpx;">◈</view>
+    <view style="font-size:44rpx;color:#8E7F73;font-family:'Songti SC',serif;letter-spacing:8rpx;margin-bottom:16rpx;">我的订单</view>
+    <view style="font-size:26rpx;color:#B5A496;">订单功能即将上线</view>
+  </view>
+</view>
