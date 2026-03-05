@@ -1,0 +1,127 @@
+/* 水晶详情 */
+
+.page-container {
+  min-height: 100vh;
+  background-color: #F9F7F2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 80rpx;
+}
+
+.page-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60rpx 0 32rpx;
+}
+
+.header-ornament {
+  font-size: 36rpx;
+  color: #D4AF37;
+  margin-bottom: 16rpx;
+  letter-spacing: 8rpx;
+}
+
+.header-title {
+  font-size: 52rpx;
+  font-weight: 500;
+  color: #8E7F73;
+  font-family: 'Songti SC', 'Noto Serif SC', 'STSong', serif;
+  letter-spacing: 6rpx;
+  margin-bottom: 12rpx;
+}
+
+.header-element {
+  font-size: 24rpx;
+  color: #B5A496;
+  letter-spacing: 2rpx;
+}
+
+.hero-card {
+  width: 640rpx;
+  background: #F2EFE9;
+  border-radius: 32rpx;
+  padding: 32rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 12rpx 30rpx rgba(0, 0, 0, 0.06);
+}
+
+.hero-image {
+  width: 360rpx;
+  height: 360rpx;
+  border-radius: 24rpx;
+  background: #F9F7F2;
+}
+
+.hero-price {
+  margin-top: 20rpx;
+  font-size: 32rpx;
+  color: #D4AF37;
+  font-weight: 600;
+  letter-spacing: 1rpx;
+}
+
+.section {
+  width: 640rpx;
+  margin-top: 36rpx;
+  background: #F2EFE9;
+  border-radius: 28rpx;
+  padding: 28rpx 32rpx;
+}
+
+.section-title {
+  font-size: 28rpx;
+  color: #8E7F73;
+  font-family: 'Songti SC', serif;
+  margin-bottom: 16rpx;
+  letter-spacing: 1rpx;
+}
+
+.section-body {
+  font-size: 24rpx;
+  color: #8E7F73;
+  line-height: 1.8;
+}
+
+.keyword-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rpx;
+}
+
+.keyword {
+  font-size: 22rpx;
+  color: #8E7F73;
+  background: #F9F7F2;
+  padding: 8rpx 18rpx;
+  border-radius: 999rpx;
+  border: 1rpx solid rgba(142, 127, 115, 0.2);
+}
+
+.spec-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.spec-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: #8E7F73;
+}
+
+.spec-label {
+  color: #B5A496;
+}
+
+.disclaimer {
+  margin-top: 36rpx;
+  font-size: 22rpx;
+  color: #B5A496;
+}

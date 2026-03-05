@@ -10,23 +10,124 @@
 
   <!-- 手链参数 -->
   <view class="param-bar">
-    <text class="param-text">手围 {{wristCm}} cm</text>
-    <text class="param-divider">·</text>
     <text class="param-text">默认珠径 {{beadDiameterMm}} mm</text>
+    <text class="param-divider">·</text>
+    <text class="param-text">默认手链单圈</text>
   </view>
 
   <!-- 手链 Canvas -->
-  <view class="canvas-wrap">
-    <canvas type="2d" id="braceletCanvas" class="bracelet-canvas"></canvas>
-    <view wx:if="{{isLoading}}" class="canvas-loading">
-      <text class="loading-text">排列珠子中…</text>
+  <view class="canvas-area">
+    <view class="canvas-wrap">
+      <canvas type="2d" id="braceletCanvas" class="bracelet-canvas"
+              bindtouchstart="onCanvasTouchStart"
+              bindtouchmove="onCanvasTouchMove"
+              bindtouchend="onCanvasTouchEnd"></canvas>
+    </view>
+
+    <view class="canvas-tools">
+      <view id="trashBin" class="tool-card" bindtap="clearSelection">
+        <view class="tool-icon">🗑</view>
+        <view class="tool-text">回收箱</view>
+      </view>
+      <button class="tool-button" bindtap="openWristGuide">手围测量</button>
     </view>
   </view>
 
-  <!-- 当前测试说明 -->
+  <!-- 当前预览说明 + 实时手围 -->
   <view class="bead-note">
     <text class="bead-note-icon">◎</text>
-    <text class="bead-note-text">测试：红玉髓 × {{beadCount}}，验证圆周排列效果</text>
+    <text class="bead-note-text">点选下方灵宝添加珠子</text>
+    <text wx:if="{{wristSizeCm}}" class="bead-note-wrist">· 约 {{wristSizeCm}}</text>
+  </view>
+
+  <!-- 无诊断时提示 -->
+  <view wx:if="{{!hasDiagnosis}}" class="diagnosis-tip">
+    <text>请先完成八字诊断，系统将自动推荐调运灵宝与辅运灵宝。</text>
+  </view>
+
+  <!-- 调运主石 / 辅石展示（有诊断时显示） -->
+  <view wx:if="{{hasDiagnosis}}" class="all-crystals-block">
+    <block wx:for="{{elementGroups}}" wx:key="key" wx:for-item="group">
+      <view class="section-label">
+        <view class="section-role">{{group.roleLabel}}</view>
+        <view class="section-keywords">{{group.elementKeywords}}</view>
+      </view>
+
+      <view class="crystal-grid">
+        <view
+          class="crystal-card"
+          wx:for="{{group.crystals}}" wx:key="id"
+          bindtap="onCrystalSelect" data-id="{{item.id}}"
+        >
+          <view class="crystal-info">
+            <!-- 上部：左图 + 右侧名称/属性 -->
+            <view class="card-top">
+              <image class="crystal-img" src="{{item.image_url}}" mode="aspectFill"></image>
+              <view class="card-top-info">
+                <view class="crystal-name">{{item.name}}</view>
+                <view class="crystal-element">{{item.elementCN}} · {{item.chakra}}</view>
+              </view>
+            </view>
+            <!-- 关键词 -->
+            <view class="crystal-keywords">
+              <text class="keyword" wx:for="{{item.keywords}}" wx:key="*this" wx:for-item="kw">{{kw}}</text>
+            </view>
+            <!-- 底部：价格 + 详情 -->
+            <view class="card-bottom">
+              <text class="crystal-price">¥ {{item.price}}</text>
+              <view class="detail-btn" catchtap="onDetailTap" data-id="{{item.id}}">详情</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 详情弹窗遮罩 -->
+  <view class="detail-overlay" wx:if="{{showDetail}}" bindtap="onCloseDetail">
+    <view class="detail-card" catchtap="noop">
+
+      <!-- 关闭按钮 -->
+      <view class="detail-close" bindtap="onCloseDetail">✕</view>
+
+      <!-- 图片 -->
+      <image class="detail-img" src="{{detailCrystal.image_url}}" mode="aspectFill"></image>
+
+      <!-- 名称 + 属性 + 价格 -->
+      <view class="detail-title-block">
+        <view class="detail-name">{{detailCrystal.name}}</view>
+        <view class="detail-meta-row">
+          <text class="detail-meta">{{detailCrystal.elementCN}}属性 · {{detailCrystal.chakra}}</text>
+          <text class="detail-price">¥ {{detailCrystal.price}} / 颗</text>
+        </view>
+      </view>
+
+      <!-- 关键词 -->
+      <view class="detail-keywords">
+        <text class="keyword" wx:for="{{detailCrystal.keywords}}" wx:key="*this" wx:for-item="kw">{{kw}}</text>
+      </view>
+
+      <!-- 分割线 -->
+      <view class="detail-divider"></view>
+
+      <!-- 详细介绍 -->
+      <view class="detail-desc">{{detailCrystal.description}}</view>
+
+    </view>
+  </view>
+
+  <!-- 固定底部确认按钮 -->
+  <view class="confirm-bar">
+    <button class="confirm-btn" bindtap="onConfirmDesign">确认设计</button>
+  </view>
+
+  <!-- 手围测量图 -->
+  <view class="guide-overlay" wx:if="{{showWristGuide}}" bindtap="closeWristGuide">
+    <view class="guide-card" catchtap="noop">
+      <view class="guide-close" bindtap="closeWristGuide">✕</view>
+      <image class="guide-image" src="/images/手围测量.png" mode="widthFix"></image>
+      <view class="guide-note">点击空白处关闭</view>
+    </view>
   </view>
 
 </view>

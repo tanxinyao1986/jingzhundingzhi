@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/diagnosis/diagnosis",
     "pages/recommendation/recommendation",
+    "pages/crystal-detail/crystal-detail",
     "pages/diy/diy",
     "pages/orders/orders"
   ],

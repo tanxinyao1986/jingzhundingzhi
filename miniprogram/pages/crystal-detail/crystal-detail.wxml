@@ -1,0 +1,45 @@
+<!-- 水晶详情页 -->
+<view class="page-container" wx:if="{{crystal}}">
+
+  <view class="page-header">
+    <view class="header-ornament">✦</view>
+    <view class="header-title">{{crystal.name}}</view>
+    <view class="header-element" style="color: {{elementColor}}">
+      {{elementEmoji}} {{crystal.elementCN}}属性 · {{crystal.chakra}}
+    </view>
+  </view>
+
+  <view class="hero-card">
+    <image class="hero-image" src="{{crystal.image_url}}" mode="aspectFill"></image>
+    <view class="hero-price">¥ {{crystal.price}} / 颗</view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">能量关键词</view>
+    <view class="keyword-list">
+      <text class="keyword" wx:for="{{crystal.keywords}}" wx:key="*this">{{item}}</text>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">能量描述</view>
+    <view class="section-body">{{crystal.description}}</view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">规格与信息</view>
+    <view class="spec-list">
+      <view class="spec-item">
+        <text class="spec-label">珠径</text>
+        <text class="spec-value">{{crystal.size_mm}} mm</text>
+      </view>
+      <view class="spec-item">
+        <text class="spec-label">库存</text>
+        <text class="spec-value">{{crystal.stock}} 颗</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="disclaimer">⚠️ 能量辅助，非医疗建议</view>
+
+</view>

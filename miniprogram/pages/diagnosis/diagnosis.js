@@ -31,7 +31,8 @@ const ELEMENT_COLORS = {
 
 function buildYearRange() {
   const years = [];
-  for (let y = 1920; y <= 2024; y++) years.push(String(y));
+  const currentYear = new Date().getFullYear();
+  for (let y = 1920; y <= currentYear; y++) years.push(String(y));
   return years;
 }
 

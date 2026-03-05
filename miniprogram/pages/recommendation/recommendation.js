@@ -46,7 +46,7 @@ Page({
 
   onCrystalTap(e) {
     const id = e.currentTarget.dataset.id;
-    wx.showToast({ title: `水晶详情 (ID: ${id}) 即将上线`, icon: 'none' });
+    wx.navigateTo({ url: `/pages/crystal-detail/crystal-detail?id=${id}` });
   },
 
   goToDiy() {

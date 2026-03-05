@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 60rpx;
+  padding-bottom: 160rpx;
 }
 
 /* 页头 */
@@ -67,18 +67,33 @@
 }
 
 /* Canvas 容器 */
+.canvas-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20rpx;
+  width: 100%;
+  padding: 0 32rpx;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
 .canvas-wrap {
   position: relative;
-  width: 680rpx;
-  height: 680rpx;
+  width: 620rpx;
+  height: 620rpx;
+  max-width: 92vw;
+  max-height: 92vw;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .bracelet-canvas {
-  width: 680rpx;
-  height: 680rpx;
+  width: 620rpx;
+  height: 620rpx;
+  max-width: 92vw;
+  max-height: 92vw;
 }
 
 .canvas-loading {
@@ -95,14 +110,111 @@
   letter-spacing: 2rpx;
 }
 
+.canvas-tools {
+  display: flex;
+  flex-direction: row;
+  gap: 20rpx;
+  align-items: center;
+}
+
+.tool-card {
+  width: 96rpx;
+  height: 96rpx;
+  background: #F2EFE9;
+  border-radius: 24rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8rpx;
+  border: 1rpx solid rgba(142, 127, 115, 0.2);
+}
+
+.tool-icon {
+  font-size: 36rpx;
+}
+
+.tool-text {
+  font-size: 20rpx;
+  color: #8E7F73;
+  font-family: 'Songti SC', serif;
+  letter-spacing: 1rpx;
+}
+
+.tool-button {
+  width: 120rpx;
+  height: 96rpx;
+  border-radius: 24rpx;
+  background: #F2EFE9;
+  color: #8E7F73;
+  font-size: 20rpx;
+  font-family: 'Songti SC', serif;
+  letter-spacing: 1rpx;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1rpx solid rgba(142, 127, 115, 0.2);
+}
+
+.tool-button::after {
+  border: none;
+}
+
+/* 手围测量弹窗 */
+.guide-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(30, 25, 20, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.guide-card {
+  width: 86vw;
+  background: #FAF8F4;
+  border-radius: 28rpx;
+  padding: 32rpx 28rpx 24rpx;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.guide-close {
+  position: absolute;
+  top: 18rpx;
+  right: 22rpx;
+  font-size: 28rpx;
+  color: #B5A496;
+  line-height: 1;
+  padding: 6rpx;
+}
+
+.guide-image {
+  width: 100%;
+  border-radius: 18rpx;
+  background: #EDE9E2;
+}
+
+.guide-note {
+  margin-top: 16rpx;
+  font-size: 22rpx;
+  color: #B5A496;
+  text-align: center;
+}
+
 /* 珠子说明 */
 .bead-note {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 12rpx;
-  margin-top: 32rpx;
-  padding: 20rpx 40rpx;
+  margin-top: 24rpx;
+  padding: 18rpx 36rpx;
   background: #F2EFE9;
   border-radius: 100rpx;
 }
@@ -116,4 +228,305 @@
   font-size: 22rpx;
   color: #B5A496;
   letter-spacing: 1rpx;
+}
+
+.bead-note-wrist {
+  font-size: 22rpx;
+  color: #D4AF37;
+  font-weight: 500;
+  letter-spacing: 1rpx;
+}
+
+/* 诊断推荐横幅 */
+.diagnosis-banner {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx 32rpx;
+  margin-top: 24rpx;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(196, 160, 106, 0.08));
+  border-top: 1rpx solid rgba(212, 175, 55, 0.25);
+  border-bottom: 1rpx solid rgba(212, 175, 55, 0.25);
+}
+
+.diagnosis-banner-text {
+  font-size: 24rpx;
+  color: #C4A06A;
+  font-family: 'Songti SC', serif;
+  letter-spacing: 1rpx;
+}
+
+/* 全部灵宝区域 */
+.all-crystals-block {
+  width: 100%;
+  margin-top: 32rpx;
+}
+
+/* 分区标题 */
+.section-label {
+  padding: 0 28rpx;
+  margin: 32rpx 0 16rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 4rpx;
+}
+
+.section-role {
+  font-size: 30rpx;
+  color: #8E7F73;
+  font-family: 'Songti SC', serif;
+  font-weight: 500;
+  letter-spacing: 2rpx;
+}
+
+.section-keywords {
+  font-size: 22rpx;
+  color: #B5A496;
+  letter-spacing: 1rpx;
+}
+
+/* ───── 三列网格 ───── */
+.crystal-grid {
+  padding: 0 24rpx;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rpx;
+}
+
+/* 卡片宽度 = (750 - 48 - 24) / 3 = 226rpx，取 225 */
+.crystal-card {
+  width: 225rpx;
+  background: #F2EFE9;
+  border-radius: 16rpx;
+  overflow: hidden;
+  box-sizing: border-box;
+  border: 1.5rpx solid rgba(142, 127, 115, 0.10);
+}
+
+/* 内容区统一 padding */
+.crystal-info {
+  padding: 10rpx 12rpx 10rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+/* 上部横排：图片左 + 名称/属性右 */
+.card-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10rpx;
+}
+
+/* 珠子图片 — 两行文字高度 */
+.crystal-img {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 10rpx;
+  flex-shrink: 0;
+  background: #EDE9E2;
+}
+
+/* 右侧名称 + 属性列 */
+.card-top-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4rpx;
+  min-width: 0;
+}
+
+.crystal-name {
+  font-size: 26rpx;
+  color: #8E7F73;
+  font-weight: 500;
+  font-family: 'Songti SC', serif;
+  line-height: 1.3;
+}
+
+.crystal-element {
+  font-size: 20rpx;
+  color: #B5A496;
+  line-height: 1.3;
+}
+
+.crystal-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rpx;
+}
+
+.keyword {
+  font-size: 17rpx;
+  color: #8E7F73;
+  padding: 3rpx 9rpx;
+  background: #F9F7F2;
+  border-radius: 999rpx;
+  border: 1rpx solid rgba(142, 127, 115, 0.18);
+}
+
+/* 价格 + 详情按钮 */
+.card-bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 4rpx;
+  border-top: 1rpx solid rgba(142, 127, 115, 0.08);
+}
+
+.crystal-price {
+  font-size: 22rpx;
+  color: #D4AF37;
+  font-weight: 500;
+}
+
+.detail-btn {
+  font-size: 19rpx;
+  color: #8E7F73;
+  background: #FFFFFF;
+  border: 1rpx solid rgba(142, 127, 115, 0.22);
+  border-radius: 999rpx;
+  padding: 4rpx 14rpx;
+  line-height: 1.5;
+}
+
+/* ───── 详情弹窗 ───── */
+.detail-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(30, 25, 20, 0.55);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 999;
+}
+
+.detail-card {
+  width: 100%;
+  background: #FAF8F4;
+  border-radius: 36rpx 36rpx 0 0;
+  padding-bottom: 60rpx;
+  box-sizing: border-box;
+  position: relative;
+  max-height: 88vh;
+  overflow-y: auto;
+}
+
+.detail-close {
+  position: absolute;
+  top: 28rpx;
+  right: 36rpx;
+  font-size: 32rpx;
+  color: #B5A496;
+  line-height: 1;
+  padding: 8rpx;
+  z-index: 1;
+}
+
+/* 顶部大图 */
+.detail-img {
+  width: 100%;
+  height: 320rpx;
+  display: block;
+  border-radius: 36rpx 36rpx 0 0;
+  background: #EDE9E2;
+}
+
+/* 名称 + 属性行 */
+.detail-title-block {
+  padding: 24rpx 36rpx 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+  margin-bottom: 20rpx;
+}
+
+.detail-name {
+  font-size: 44rpx;
+  color: #8E7F73;
+  font-weight: 500;
+  font-family: 'Songti SC', serif;
+  letter-spacing: 4rpx;
+}
+
+.detail-meta-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.detail-meta {
+  font-size: 24rpx;
+  color: #B5A496;
+}
+
+.detail-price {
+  font-size: 28rpx;
+  color: #D4AF37;
+  font-weight: 500;
+}
+
+/* 关键词 */
+.detail-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rpx;
+  padding: 0 36rpx;
+  margin-bottom: 24rpx;
+}
+
+/* 分割线 */
+.detail-divider {
+  height: 1rpx;
+  background: rgba(142, 127, 115, 0.12);
+  margin: 0 36rpx 24rpx;
+}
+
+/* 详细介绍 */
+.detail-desc {
+  font-size: 28rpx;
+  color: #8E7F73;
+  line-height: 1.9;
+  font-family: 'Songti SC', serif;
+  letter-spacing: 1rpx;
+  padding: 0 36rpx;
+}
+
+/* ───── 固定底部确认栏 ───── */
+.confirm-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20rpx 40rpx;
+  padding-bottom: calc(20rpx + env(safe-area-inset-bottom));
+  background: rgba(249, 247, 242, 0.96);
+  border-top: 1rpx solid rgba(142, 127, 115, 0.12);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+}
+
+.confirm-btn {
+  width: 100%;
+  height: 96rpx;
+  border-radius: 999rpx;
+  background: linear-gradient(135deg, #C4A06A, #D4AF37);
+  color: #FAF8F4;
+  font-size: 30rpx;
+  font-family: 'Songti SC', serif;
+  letter-spacing: 4rpx;
+  font-weight: 500;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirm-btn::after {
+  border: none;
 }
